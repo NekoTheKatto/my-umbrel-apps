@@ -1,0 +1,40 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: music-slskd_slskd_1
+      APP_PORT: 5030
+
+  slskd:
+    image: ghcr.io/hotio/slskd:latest
+    restart: on-failure
+    hostname: slskd.internal
+    cap_add:
+      - NET_ADMIN
+    sysctls:
+      - net.ipv4.conf.all.src_valid_mark=1
+      - net.ipv6.conf.all.disable_ipv6=1
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - UMASK=002
+      - TZ=Europe/Paris
+      - VPN_ENABLED=true
+      - VPN_CONF=wg0
+      - VPN_PROVIDER=proton
+      - VPN_LAN_NETWORK=10.21.0.0/16,192.168.1.0/24
+      - VPN_LAN_LEAK_ENABLED=false
+      - VPN_EXPOSE_PORTS_ON_LAN=5030/tcp
+      - VPN_AUTO_PORT_FORWARD=true
+      - VPN_HEALTHCHECK_ENABLED=true
+      - PRIVOXY_ENABLED=false
+      - UNBOUND_ENABLED=false
+      - SLSKD_REMOTE_CONFIGURATION=true
+      - SLSKD_DOWNLOADS_DIR=/data/downloads
+      - SLSKD_INCOMPLETE_DIR=/data/incomplete
+    volumes:
+      - ${APP_DATA_DIR}/data/config:/config
+      - ${UMBREL_ROOT}/data/storage/downloads/slskd/wireguard:/config/wireguard
+      - ${UMBREL_ROOT}/data/storage/downloads/slskd:/data
+      - ${UMBREL_ROOT}/data/storage/downloads/slskd/downloads:/slskd
