@@ -1,0 +1,22 @@
+manifestVersion: 1
+id: music-explo
+category: media
+name: Explo
+version: "latest"
+tagline: Discover Weekly for Navidrome
+description: >-
+  Downloads your weekly ListenBrainz recommendations and creates
+  discovery playlists in Navidrome.
+developer: LumePart
+website: https://github.com/LumePart/Explo
+dependencies:
+  - navidrome
+repo: https://github.com/LumePart/Explo
+support: https://github.com/LumePart/Explo/issues
+port: 7288
+gallery: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
+submitter: NekoTheKatto
+submission: https://github.com/NekoTheKatto/my-umbrel-apps
