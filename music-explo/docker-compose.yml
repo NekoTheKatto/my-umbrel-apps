@@ -1,0 +1,20 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: music-explo_explo_1
+      APP_PORT: 7288
+
+  explo:
+    image: ghcr.io/lumepart/explo:latest
+    restart: on-failure
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Paris
+      - WEB_UI=true
+    volumes:
+      - ${APP_DATA_DIR}/data/explo.env:/opt/explo/.env
+      - ${APP_DATA_DIR}/data/config:/opt/explo/config
+      - ${UMBREL_ROOT}/data/storage/downloads/music/Discover:/data
