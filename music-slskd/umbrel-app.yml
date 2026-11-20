@@ -1,8 +1,8 @@
-manifestVersion: 1.0.1
+manifestVersion: 1
 id: music-slskd
 category: media
 name: slskd (VPN)
-version: "1.0"
+version: "1.0.1"
 tagline: Soulseek client routed through Proton VPN
 description: >-
   slskd web client for the Soulseek network, with all its traffic
