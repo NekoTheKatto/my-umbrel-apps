@@ -23,7 +23,7 @@ services:
       - VPN_ENABLED=true
       - VPN_CONF=wg0
       - VPN_PROVIDER=proton
-      - VPN_LAN_NETWORK=10.21.0.0/16,192.168.1.0/24
+      - VPN_LAN_NETWORK=192.168.1.0/24
       - VPN_LAN_LEAK_ENABLED=false
       - VPN_EXPOSE_PORTS_ON_LAN=5030/tcp
       - VPN_AUTO_PORT_FORWARD=true
