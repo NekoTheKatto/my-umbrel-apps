@@ -1,0 +1,21 @@
+manifestVersion: 1
+id: music-slskd
+category: media
+name: slskd (VPN)
+version: "1.0"
+tagline: Soulseek client routed through Proton VPN
+description: >-
+  slskd web client for the Soulseek network, with all its traffic
+  going through a Proton VPN WireGuard tunnel.
+developer: slskd / hotio
+website: https://github.com/slskd/slskd
+dependencies: []
+repo: https://github.com/slskd/slskd
+support: https://github.com/slskd/slskd/issues
+port: 5030
+gallery: []
+path: ""
+defaultUsername: "slskd"
+defaultPassword: "slskd"
+submitter: NekoTheKatto
+submission: https://github.com/NekoTheKatto/my-umbrel-apps
